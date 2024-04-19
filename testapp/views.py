@@ -39,8 +39,9 @@ class LoginUserAPIView(generics.CreateAPIView):
 class ListUserPIView(generics.ListAPIView):
     queryset = CustomUser.objects.all()
     serializer_class= UserSerializer
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [SessionAuthentication]
     permission_classes =[IsAuthenticated]
+    
     
 
 class TokenLogin(generics.GenericAPIView):
